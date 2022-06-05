@@ -16,6 +16,10 @@
    cd unity_RL
    conda env create --file myenv.yaml
    ```
+3. Activate environments
+   ```sh
+   conda activate ml_unity_baselines
+   ```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
