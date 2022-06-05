@@ -24,27 +24,27 @@ model = PPO('MlpPolicy', env, verbose=1)
 # model = PPO.load('mlagents_model')
 
 # モデルの学習
-model.learn(total_timesteps=12800)
+model.learn(total_timesteps=128000)
 
 # モデルの保存
 model.save('mlagents_model')
 
 # モデルのテスト
-state = env.reset()
-total_reward = 0
-while True:
-    # 環境の描画
-    env.render()
+# state = env.reset()
+# total_reward = 0
+# while True:
+#     # 環境の描画
+#     env.render()
 
-    # 行動の取得
-    action, _ = model.predict(state)
+#     # 行動の取得
+#     action, _ = model.predict(state)
 
-    # 1ステップ実行
-    state, reward, done, info = env.step(action)
-    total_reward += reward[0]
+#     # 1ステップ実行
+#     state, reward, done, info = env.step(action)
+#     total_reward += reward[0]
 
-    # エピソード完了
-    if done:
-        print('reward:', total_reward)
-        state = env.reset()
-        total_reward = 0
+#     # エピソード完了
+#     if done:
+#         print('reward:', total_reward)
+#         state = env.reset()
+#         total_reward = 0
